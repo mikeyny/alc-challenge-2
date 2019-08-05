@@ -32,7 +32,7 @@ public class FirebaseUtil {
     private static final int RC_SIGN_IN = 123;
     private static MainActivity caller;
 
-    public static boolean isAdmin = true ;
+    public static boolean isAdmin ;
 
     private FirebaseUtil(){}
     public static void openFbReference(String ref, final MainActivity callerActivity) {
@@ -81,7 +81,7 @@ public class FirebaseUtil {
     }
 
     private static void checkAdmin(String uid) {
-        FirebaseUtil.isAdmin=true;
+        FirebaseUtil.isAdmin= false;
         DatabaseReference ref = mFirebaseDatabase.getReference().child("administrators")
                 .child(uid);
         ChildEventListener listener = new ChildEventListener() {

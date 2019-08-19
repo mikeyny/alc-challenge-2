@@ -29,12 +29,8 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_menu, menu);
         MenuItem insertMenu = menu.findItem(R.id.insert_menu);
-        if (FirebaseUtil.isAdmin) {
-            insertMenu.setVisible(true);
-        }
-        else {
-            insertMenu.setVisible(false);
-        }
+
+        insertMenu.setVisible(FirebaseUtil.isAdmin);
 
 
 
